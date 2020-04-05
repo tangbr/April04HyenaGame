@@ -4,7 +4,7 @@ module scenes
     {
         // PRIVATE INSTANCE MEMBERS
         private _welcomeLabel: objects.Label;
-            private _logoLabel: objects.Label;
+        private _logoLabel: objects.Label;
         private _startButton: objects.Button;
         private _instructionButton: objects.Button;
         private _exitButton: objects.Button;
@@ -57,15 +57,14 @@ module scenes
             this._startButton.on("click", ()=>{
                 config.Game.SCENE = scenes.State.PLAY;
             });
+
             this._instructionButton.on("click", ()=>{
                 window.alert("instruction:   Academic purpose only! PS Guide Attention!     blablabla......");
             });
+            
             this._exitButton.on("click", ()=>{
-                this.removeAllChildren();
-                
-                 //config.Game.SCENE = scenes.State.PLAY;
-            });
-
+                this.Clean();
+             });
         }
 
         public Clean():void
